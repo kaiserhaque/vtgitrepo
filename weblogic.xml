@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app
+    xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd">
+
+    <container-descriptor>
+        <!-- Use application-provided SLF4J and Logback libraries, not WebLogic's -->
+        <prefer-application-packages>
+            <package-name>org.slf4j.*</package-name>
+            <package-name>ch.qos.logback.*</package-name>
+        </prefer-application-packages>
+
+        <!-- Optionally prefer other packages to resolve any classloader issues -->
+        <prefer-application-packages>
+            <package-name>javax.*</package-name>
+        </prefer-application-packages>
+    </container-descriptor>
+
+    <!-- Optional: Name your application (helps with WebLogic-specific logs) -->
+    <context-root>/my-app</context-root>
+</weblogic-web-app>
